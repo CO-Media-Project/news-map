@@ -2,7 +2,7 @@
   "name": "colorado-news",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ssdatar.github.io/news-map",
+  "homepage": "https://comediproj.github.io/news-map/",
   "dependencies": {
     "@newswire/frames": "^1.0.0",
     "@testing-library/jest-dom": "^5.16.4",
