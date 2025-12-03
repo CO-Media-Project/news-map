@@ -1,4 +1,4 @@
-# Colorado News Mapping Project
+# Colorado News Mapping Project - CMP Version
 
 This project uses [Create React App](https://github.com/facebook/create-react-app). 
 
@@ -13,7 +13,7 @@ There are two steps in the process:
 If you need to make any changes to the text above the map, it needs to be done manually.
 
 ## Publishing
-The map is a static page with HTML/CSS and Javascript and is published to Github Pages on [this link](https://colabnewsco.github.io/news-map/). The task also publishes every 6 minutes, so you don't need to publish it manually.
+The map is a static page with HTML/CSS and Javascript and is published to Github Pages on [this link](https://comediproj.github.io/news-map/). The task also publishes every 6 minutes, so you don't need to publish it manually.
 
 It is deployed as an iframe, the embed code for which is in `iframe.html`
 
@@ -42,4 +42,4 @@ Your app is ready to be deployed!
 
 ### `npm run deploy`
 
-This publishes the new build to [this link](https://colabnewsco.github.io/news-map/).
+This publishes the new build to [this link](https://comediproj.github.io/news-map/).
