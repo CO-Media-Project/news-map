@@ -6,7 +6,7 @@ const formatNumber = (num) => {
 
 const mapColor = () => [
   [3, '#ffffe0'],
-  [6, '#c9cce8'],
+  [6, '#faad7b'],
   [9, '#949be1'],
   [12, '#616ccd'],
   [15, '#313fac'],
