@@ -2,7 +2,6 @@
   "name": "colorado-news",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://co-media-project.github.io/news-map/",
   "dependencies": {
     "@newswire/frames": "^1.0.0",
     "@testing-library/jest-dom": "^5.16.4",
@@ -51,12 +50,12 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not ie 11",
-      "not dead",
-      "not chrome < 51",
-      "not safari < 10",
-      "not android < 51"
+      "chrome >= 93",
+      "safari >= 15.4",
+      "firefox >= 115",
+      "edge >= 93",
+      "and_chr >= 93",
+      "ios_saf >= 15.4"
     ],
     "development": [
       "last 1 chrome version",
