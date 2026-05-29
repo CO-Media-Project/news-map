@@ -30,6 +30,8 @@ const Map = (props) => {
 
   // Initialize map when component mounts
   useEffect(() => {
+    if (!mapContainerRef.current || !source) return;
+
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/light-v10',
@@ -54,7 +56,7 @@ const Map = (props) => {
     map.on('load', () => {
       map.addSource('colorado', {
         type: 'geojson',
-        data: source,
+        data: source.features ? source : JSON.parse(JSON.stringify(source)),
         promoteId: 'AFFGEOID',
         // generateId: true,
       });
@@ -65,8 +67,6 @@ const Map = (props) => {
         source: 'colorado',
         paint: fill.paint,
       });
-
-      console.log(map.getZoom())
 
       setMapObj(map);
 
@@ -166,15 +166,9 @@ const Map = (props) => {
 
     // Clean up on unmount
     return () => map.remove();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [source]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const resetZoom = useCallback((e) => {
-    // console.log(e);
-    // console.log(mapObj);
-    // console.log(mapObj.getZoom());
-    // console.log(mapObj.getMinZoom());
-    // console.log(mapObj.getMaxZoom());
-    // console.log(mapObj.getMaxBounds());
     mapObj.setZoom(zoom);
     mapObj.jumpTo({ center });
   }, [ mapObj, zoom, center ]);
