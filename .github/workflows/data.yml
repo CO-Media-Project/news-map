@@ -19,18 +19,20 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '20'
+          cache: 'npm'
       
       # Runs a single command using the runners shell
       - name: Set up configurations
         shell: bash
         run: echo -n "${{ secrets.SHEET_KEY }}" | base64 --decode > key.json
 
-      - name: Install 
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
       # Runs a single command using the runners shell
       - name: Get spreadsheet data
@@ -53,7 +55,7 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
